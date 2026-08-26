@@ -7,14 +7,15 @@
   "engines": {
     "node": ">=20"
   },
-  "scripts": {
-    "build": "tsc -p tsconfig.json",
-    "migrate": "node -r ts-node/register/transpile-only scripts/migrate.ts",
-    "test": "node --test --require ts-node/register/transpile-only test/**/*.test.ts",
-    "test:invariant": "node --test --require ts-node/register/transpile-only test/invariant.test.ts",
-    "test:concurrency": "node --test --require ts-node/register/transpile-only test/concurrency.test.ts",
-    "lint": "tsc -p tsconfig.json --noEmit"
-  },
+ "scripts": {
+  "build": "tsc -p tsconfig.json",
+  "migrate": "node -r ts-node/register/transpile-only scripts/migrate.ts",
+   "test": "node --test --require ts-node/register/transpile-only test/invariant.test.ts test/concurrency.test.ts",
+  "test:invariant": "node --test --require ts-node/register/transpile-only test/invariant.test.ts",
+  "test:concurrency": "node --test --require ts-node/register/transpile-only test/concurrency.test.ts",
+  "lint": "tsc -p tsconfig.json --noEmit"
+},
+
   "dependencies": {
     "pg": "^8.12.0"
   },
