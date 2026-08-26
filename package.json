@@ -1,0 +1,27 @@
+{
+  "name": "ledgerpulse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Multi-tenant financial infrastructure simulator demonstrating correctness under concurrency, retries, async delivery, and failure.",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "migrate": "node -r ts-node/register/transpile-only scripts/migrate.ts",
+    "test": "node --test --require ts-node/register/transpile-only test/**/*.test.ts",
+    "test:invariant": "node --test --require ts-node/register/transpile-only test/invariant.test.ts",
+    "test:concurrency": "node --test --require ts-node/register/transpile-only test/concurrency.test.ts",
+    "lint": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/pg": "^8.11.6",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
